@@ -4,7 +4,7 @@ word_list = ["aardvark", "baboon", "camel"]
 chosen_word = random.choice(word_list)
 word_as_list = list(chosen_word)
 #Testing code
-print(f'Pssst, the solution is {chosen_word}.')
+#print(f'Pssst, the solution is {chosen_word}.')
 
 
 lives = 6
