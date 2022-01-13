@@ -1,7 +1,8 @@
 from dis import dis
 import random
 import art
-word_list = ["aardvark", "baboon", "camel"]
+import words
+word_list = words.word_lists
 chosen_word = random.choice(word_list)
 word_as_list = list(chosen_word)
 #Testing code
