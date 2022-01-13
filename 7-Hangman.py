@@ -1,5 +1,6 @@
 from dis import dis
 import random
+import art
 word_list = ["aardvark", "baboon", "camel"]
 chosen_word = random.choice(word_list)
 word_as_list = list(chosen_word)
@@ -8,62 +9,7 @@ word_as_list = list(chosen_word)
 
 
 lives = 6
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
+
 
 display = []
 
@@ -75,9 +21,10 @@ print(display)
 
 end_game = False
 
+print(art.logo)
 while not end_game:
     print(f"Lives: {lives}")
-    print(stages[lives])
+    print(art.stages[lives])
     print(display)
     
     guess = input("Guess a letter: ").lower()
@@ -89,8 +36,6 @@ while not end_game:
     
     if guess not in display:
         lives -= 1
-    
-    
 
     if display == word_as_list:
         end_game = True
