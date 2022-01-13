@@ -33,9 +33,12 @@ while not end_game:
     for dis_num in range(len(chosen_word)): #loops the number of times as there are letters in the chosen word from the list
         letter = chosen_word[dis_num] #starting at the first letter of the chosen word, will check the index (chosen_word[the current letter of that word])
         if letter == guess: # if the letter and guess match
+            if guess in display:
+                print(f"You have already used the letter {guess}")
             display[dis_num] = guess #then the display[] index will change to match the letter at that position
     
     if guess not in display:
+        print(f"{guess} is not in the word")
         lives -= 1
 
     if display == word_as_list:
