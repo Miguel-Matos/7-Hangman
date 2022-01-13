@@ -1,21 +1,27 @@
+from dis import dis
 import random
-
 word_list = ["aardvark", "baboon", "camel"]
-
-
 chosen_word = random.choice(word_list)
 
-word = ""
+#Testing code
+print(f'Pssst, the solution is {chosen_word}.')
 
-print(chosen_word)
+display = []
 
-guess = input("Choose a letter: ").lower()
+for i in chosen_word:
+    display.append("_")
 
-num = 0
+print(display)
+#print(len(chosen_word))
 
-for letter in chosen_word:
-    if letter == guess:
-        print("yes")
+guess = input("Guess a letter: ").lower()
+
+for dis_num in range(len(chosen_word)): #loops the number of times as there are letters in the chosen word from the list
+    letter = chosen_word[dis_num] #starting at the first letter of the chosen word, will check the index
+    if letter == guess: # if the letter and guess match
+        print("Right")
+        display[dis_num] = guess #then the display[] index will change to match the letter at that position
     else:
-        print("no")
-    num += 1
+        print("Wrong")
+
+print(display)
